@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNest Quest</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.payment-options {
+    margin-bottom: 20px;
+}
+
+.payment-options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #17AF26;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0F7C14;
+}
+
+    </style>
+
+<body>
+    <div class="container">
+        <h2>Select Payment Method</h2>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment" value="credit_card" checked>
+                Credit Card
+            </label>
+            <label>
+                <input type="radio" name="payment" value="paypal">
+                PayPal
+            </label>
+            <label>
+                <input type="radio" name="payment" value="cod">
+                Cash on Delivery (COD)
+            </label>
+            <label>
+                <input type="radio" name="payment" value="upi">
+                UPI (Unified Payments Interface)
+            </label>
+            <!-- Add more payment options as needed -->
+        </div>
+
+        <form id="payment-form">
+            <div class="input-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="cardNumber" placeholder="Enter your card number">
+            </div>
+            <div class="input-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY">
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV">
+            </div>
+            
+        </form>
+        <div class="input-group">
+            <button onclick="redirect()" type="submit" class="btn">Proceed to Payment</button>
+        </div>
+    </div>
+</body>
+<script>
+    function redirect() {
+        window.location.href = "payment_sucess.html";
+    }
+</script>
+</html>
